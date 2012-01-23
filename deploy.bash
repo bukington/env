@@ -40,7 +40,7 @@ fi
 # dotfiles
 #
 cd $REPOS_PATH/dotfiles
-find . -type f | sed 's/^..//' | while read path; do
+find . -type f -or -type l | sed 's/^..//' | while read path; do
   dir=`sed -n '/\//s|/[^/]*$||p' <<< $path`  # (empty if at pwd)
   file=`basename $path`
 
