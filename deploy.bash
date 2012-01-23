@@ -28,12 +28,14 @@ REPOS_PATH="$PWD"
 
 # bin scripts
 #
-scripts=`ls bin/`
-mkdir -p ~/bin
-cd ~/bin
-for file in $scripts; do
-  symlink "$REPOS_PATH/bin/$file" "${file%.*}"
-done
+if [ -d bin ]; then
+  scripts=`ls bin/`
+  mkdir -p ~/bin
+  cd ~/bin
+  for file in $scripts; do
+    symlink "$REPOS_PATH/bin/$file" "${file%.*}"
+  done
+fi
 
 # dotfiles
 #
