@@ -54,6 +54,7 @@ if has('gui_running')
   colorscheme inkpot
 else
   colorscheme desert
+  set background=dark
 end
 
 " Change <Leader>
@@ -137,6 +138,7 @@ set wildignore=*.o,*.fasl
 autocmd BufRead *.qcf set filetype=lisp
 autocmd BufRead qpx.inc set filetype=make
 autocmd BufRead letter* set filetype=mail
+autocmd BufRead *.mk set filetype=make
 autocmd Filetype mail set fo -=l autoindent spell
 
 " ITA indenting style
@@ -147,6 +149,8 @@ autocmd Filetype c,cpp,h set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 "autocmd Filetype c,cpp,h set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 " Viewglob
 "autocmd Filetype c,cpp,h,sh set cindent autoindent
+" Makefile style
+autocmd BufRead,BufNewFile *.mk set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 autocmd Filetype sh set ts=4 shiftwidth=2 expandtab
 autocmd Filetype lisp,ruby,xml,html set ts=8 shiftwidth=2 expandtab
